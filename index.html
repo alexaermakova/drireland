@@ -17,6 +17,9 @@
       --accent-dark: #324c45;
       --line: #ddd4c8;
       --gold: #b7935b;
+      --terracotta: #c76f51;
+      --leaf: #90a89c;
+      --leaf-soft: #e7eee8;
     }
 
     * {
@@ -225,10 +228,186 @@
     }
 
     .intro {
-      background: linear-gradient(180deg, #fffaf3 0%, #f9f3ea 100%);
-      background: #fffaf3;
+      position: relative;
+      background: linear-gradient(135deg, #fff7ee 0%, #fbefe4 100%);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .intro::before,
+    .intro::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 220px;
+      opacity: .22;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 220'%3E%3Cg fill='none' stroke='%236f8f8a' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M80 205 C82 158 82 111 77 35'/%3E%3Cpath d='M78 83 C50 74 31 58 18 33 C45 35 66 50 78 83Z' fill='%2390a89c' fill-opacity='.28'/%3E%3Cpath d='M81 115 C112 104 133 84 145 55 C113 59 91 79 81 115Z' fill='%2390a89c' fill-opacity='.28'/%3E%3Cpath d='M82 153 C52 145 31 128 17 101 C48 103 71 123 82 153Z' fill='%2390a89c' fill-opacity='.28'/%3E%3Cpath d='M83 183 C112 176 135 158 150 131 C119 132 96 153 83 183Z' fill='%2390a89c' fill-opacity='.28'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .intro::before {
+      left: 18px;
+      bottom: 18px;
+      transform: rotate(-10deg);
+    }
+
+    .intro::after {
+      right: 24px;
+      top: 44px;
+      transform: rotate(12deg) scale(.85);
+    }
+
+    .intro-panel {
+      position: relative;
+      display: grid;
+      grid-template-columns: .62fr .38fr;
+      gap: 48px;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 50px;
+      border-radius: 34px;
+      background: rgba(255, 250, 243, .72);
+      box-shadow: 0 18px 60px rgba(38,48,47,.06);
+    }
+
+    .intro-kicker {
+      font-family: Arial, sans-serif;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .78rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .intro h2 em {
+      color: var(--terracotta);
+      font-style: italic;
+    }
+
+    .intro-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 28px;
+      padding-left: 28px;
+      border-left: 2px solid var(--terracotta);
+    }
+
+    .intro-item {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .intro-icon,
+    .symptom-icon,
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #f4e4d9;
+      color: var(--terracotta);
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      flex: 0 0 auto;
+    }
+
+    .intro-item p {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      color: #3f4744;
+    }
+
+    .symptom-card {
+      background: rgba(255, 255, 255, .66);
+      border: 1px solid rgba(221, 212, 200, .75);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 14px 40px rgba(38,48,47,.06);
+    }
+
+    .symptom-card h3 {
+      font-family: Arial, sans-serif;
+      color: var(--accent-dark);
+      font-size: .86rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 22px;
+    }
+
+    .symptom-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .symptom-list li {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(199,111,81,.18);
+      color: var(--ink);
+    }
+
+    .symptom-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .symptom-icon {
+      background: var(--leaf-soft);
+      color: var(--accent-dark);
+    }
+
+    .feature-strip {
+      max-width: 1100px;
+      margin: 26px auto 0;
+      display: grid;
+      grid-template-columns: 1.15fr repeat(4, 1fr);
+      gap: 18px;
+      align-items: center;
+      padding: 22px 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.55);
+      border: 1px solid rgba(221,212,200,.72);
+    }
+
+    .feature-title h3 {
+      margin: 0 0 2px;
+    }
+
+    .feature-title p {
+      margin: 0;
+      color: var(--accent-dark);
+      font-style: italic;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 12px;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: .95rem;
+      color: #3f4744;
+    }
+
+    .feature-icon {
+      background: transparent;
+      border: 1px solid var(--leaf);
+      color: var(--accent-dark);
     }
 
     .narrow {
@@ -440,7 +619,9 @@
       .services,
       .prepare-box,
       .faq-wrap,
-      .about-card {
+      .about-card,
+      .intro-panel,
+      .feature-strip {
         grid-template-columns: 1fr;
       }
 
@@ -511,12 +692,54 @@
     </section>
 
     <section class="intro">
-      <div class="section narrow">
-        <h2>You are not failing. Your body is changing.</h2>
-        <p>Many women spend years thinking they are exhausted, overwhelmed, anxious, or simply getting older before realizing hormones may be part of the picture.</p>
-        <p>Perimenopause can begin years before menopause itself, sometimes in the late 30s or 40s. Hormonal shifts can affect metabolism, sleep, stress response, mood, cognition, and weight regulation long before periods fully stop.</p>
-        <p>Many women are told their symptoms are normal, stress related, or simply part of aging. Others receive fragmented care that treats symptoms one by one without looking at the larger pattern.</p>
-        <p>Dr. Ireland’s practice focuses on understanding that pattern, reviewing labs carefully, and creating a plan that supports both current quality of life and long term health.</p>
+      <div class="section">
+        <div class="intro-panel">
+          <div>
+            <div class="intro-kicker">You are not alone</div>
+            <h2>You are not failing. <em>Your body is changing.</em></h2>
+            <div class="intro-list">
+              <div class="intro-item">
+                <div class="intro-icon">1</div>
+                <p>Many women spend years thinking they are exhausted, overwhelmed, anxious, or simply getting older before realizing hormones may be part of the picture.</p>
+              </div>
+              <div class="intro-item">
+                <div class="intro-icon">2</div>
+                <p>Perimenopause can begin years before menopause itself, sometimes in the late 30s or 40s. Hormonal shifts can affect metabolism, sleep, stress response, mood, cognition, and weight regulation long before periods fully stop.</p>
+              </div>
+              <div class="intro-item">
+                <div class="intro-icon">3</div>
+                <p>Many women are told their symptoms are normal, stress related, or simply part of aging. Others receive fragmented care that treats symptoms one by one without looking at the larger pattern.</p>
+              </div>
+              <div class="intro-item">
+                <div class="intro-icon">4</div>
+                <p>Dr. Ireland’s practice focuses on understanding that pattern, reviewing labs carefully, and creating a plan that supports both current quality of life and long term health.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="symptom-card">
+            <h3>You may be experiencing:</h3>
+            <ul class="symptom-list">
+              <li><span class="symptom-icon">↕</span><span>Weight changes that suddenly feel out of control</span></li>
+              <li><span class="symptom-icon">◎</span><span>Brain fog or difficulty focusing</span></li>
+              <li><span class="symptom-icon">☾</span><span>Poor sleep or waking exhausted</span></li>
+              <li><span class="symptom-icon">♡</span><span>Anxiety, irritability, or emotional overwhelm</span></li>
+              <li><span class="symptom-icon">≈</span><span>Hot flashes or hormone symptoms</span></li>
+              <li><span class="symptom-icon">…</span><span>Feeling dismissed, unheard, or “fine on paper”</span></li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="feature-strip">
+          <div class="feature-title">
+            <h3>Whole-person care.</h3>
+            <p>Rooted in science. Guided by you.</p>
+          </div>
+          <div class="feature"><span class="feature-icon">⌬</span><span>Thoughtful lab review and root-cause approach</span></div>
+          <div class="feature"><span class="feature-icon">◌</span><span>Personalized plans that evolve with you</span></div>
+          <div class="feature"><span class="feature-icon">♡</span><span>Compassionate care that listens</span></div>
+          <div class="feature"><span class="feature-icon">⌁</span><span>Support for your health today and your future</span></div>
+        </div>
       </div>
     </section>
 
