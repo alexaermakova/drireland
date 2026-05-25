@@ -111,12 +111,28 @@
     }
 
     .hero {
+      position: relative;
       display: grid;
       grid-template-columns: .92fr 1.08fr;
       gap: 56px;
       align-items: center;
       padding-top: 70px;
       padding-bottom: 82px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 20px;
+      top: 86px;
+      width: 150px;
+      height: 190px;
+      opacity: .16;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 220'%3E%3Cg fill='none' stroke='%236f8f8a' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M80 205 C82 158 82 111 77 35'/%3E%3Cpath d='M78 83 C50 74 31 58 18 33 C45 35 66 50 78 83Z' fill='%2390a89c' fill-opacity='.25'/%3E%3Cpath d='M81 115 C112 104 133 84 145 55 C113 59 91 79 81 115Z' fill='%2390a89c' fill-opacity='.25'/%3E%3Cpath d='M82 153 C52 145 31 128 17 101 C48 103 71 123 82 153Z' fill='%2390a89c' fill-opacity='.25'/%3E%3C/g%3E%3C/svg%3E");
+      transform: rotate(10deg);
     }
 
     .eyebrow {
@@ -294,18 +310,25 @@
       flex-direction: column;
       gap: 18px;
       margin-top: 28px;
-      padding-left: 28px;
-      border-left: 2px solid var(--terracotta);
+      padding-left: 0;
     }
 
     .intro-item {
       display: grid;
-      grid-template-columns: 36px 1fr;
+      grid-template-columns: 18px 1fr;
       gap: 18px;
       align-items: start;
     }
 
-    .intro-icon,
+    .intro-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      margin-top: 9px;
+      box-shadow: 0 0 0 6px rgba(199,111,81,.10);
+    }
+
     .symptom-icon,
     .feature-icon {
       width: 36px;
@@ -445,6 +468,25 @@
       font-size: .98rem;
     }
 
+    .services-section {
+      position: relative;
+    }
+
+    .services-section::before {
+      content: "";
+      position: absolute;
+      right: 42px;
+      top: 54px;
+      width: 112px;
+      height: 145px;
+      opacity: .12;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 220'%3E%3Cg fill='none' stroke='%236f8f8a' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M80 205 C82 158 82 111 77 35'/%3E%3Cpath d='M78 83 C50 74 31 58 18 33 C45 35 66 50 78 83Z' fill='%2390a89c' fill-opacity='.25'/%3E%3Cpath d='M81 115 C112 104 133 84 145 55 C113 59 91 79 81 115Z' fill='%2390a89c' fill-opacity='.25'/%3E%3C/g%3E%3C/svg%3E");
+      transform: rotate(-12deg);
+    }
+
     .services {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -535,6 +577,25 @@
       margin-bottom: 11px;
     }
 
+    .faq-section {
+      position: relative;
+    }
+
+    .faq-section::before {
+      content: "";
+      position: absolute;
+      left: 36px;
+      top: 54px;
+      width: 88px;
+      height: 116px;
+      opacity: .10;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 220'%3E%3Cg fill='none' stroke='%236f8f8a' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M80 205 C82 158 82 111 77 35'/%3E%3Cpath d='M78 83 C50 74 31 58 18 33 C45 35 66 50 78 83Z' fill='%2390a89c' fill-opacity='.25'/%3E%3Cpath d='M81 115 C112 104 133 84 145 55 C113 59 91 79 81 115Z' fill='%2390a89c' fill-opacity='.25'/%3E%3C/g%3E%3C/svg%3E");
+      transform: rotate(18deg);
+    }
+
     .faq-wrap {
       position: relative;
       display: grid;
@@ -593,11 +654,26 @@
     }
 
     footer {
+      position: relative;
       background: linear-gradient(180deg, #24312f 0%, #1f2b29 100%);
       background: var(--ink);
       color: white;
       padding: 46px 24px;
       font-family: Arial, sans-serif;
+    }
+
+    footer::after {
+      content: "";
+      position: absolute;
+      right: 32px;
+      bottom: 22px;
+      width: 90px;
+      height: 110px;
+      opacity: .12;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 220'%3E%3Cg fill='none' stroke='%23fffaf3' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M80 205 C82 158 82 111 77 35'/%3E%3Cpath d='M78 83 C50 74 31 58 18 33 C45 35 66 50 78 83Z' fill='%23fffaf3' fill-opacity='.18'/%3E%3Cpath d='M81 115 C112 104 133 84 145 55 C113 59 91 79 81 115Z' fill='%23fffaf3' fill-opacity='.18'/%3E%3C/g%3E%3C/svg%3E");
     }
 
     .footer-inner {
@@ -699,19 +775,19 @@
             <h2>You are not failing. <em>Your body is changing.</em></h2>
             <div class="intro-list">
               <div class="intro-item">
-                <div class="intro-icon">1</div>
+                <div class="intro-dot"></div>
                 <p>Many women spend years thinking they are exhausted, overwhelmed, anxious, or simply getting older before realizing hormones may be part of the picture.</p>
               </div>
               <div class="intro-item">
-                <div class="intro-icon">2</div>
+                <div class="intro-dot"></div>
                 <p>Perimenopause can begin years before menopause itself, sometimes in the late 30s or 40s. Hormonal shifts can affect metabolism, sleep, stress response, mood, cognition, and weight regulation long before periods fully stop.</p>
               </div>
               <div class="intro-item">
-                <div class="intro-icon">3</div>
+                <div class="intro-dot"></div>
                 <p>Many women are told their symptoms are normal, stress related, or simply part of aging. Others receive fragmented care that treats symptoms one by one without looking at the larger pattern.</p>
               </div>
               <div class="intro-item">
-                <div class="intro-icon">4</div>
+                <div class="intro-dot"></div>
                 <p>Dr. Ireland’s practice focuses on understanding that pattern, reviewing labs carefully, and creating a plan that supports both current quality of life and long term health.</p>
               </div>
             </div>
@@ -732,8 +808,8 @@
 
         <div class="feature-strip">
           <div class="feature-title">
-            <h3>Whole-person care.</h3>
-            <p>Rooted in science. Guided by you.</p>
+            <h3>When everything feels connected, care should be connected too.</h3>
+            <p>Weight, sleep, mood, energy, metabolism, and hormones often shift together during perimenopause and menopause. Dr. Ireland looks at the whole pattern, not just one symptom at a time.</p>
           </div>
           <div class="feature"><span class="feature-icon">⌬</span><span>Thoughtful lab review and root-cause approach</span></div>
           <div class="feature"><span class="feature-icon">◌</span><span>Personalized plans that evolve with you</span></div>
@@ -770,7 +846,7 @@
       </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="section services-section" id="services">
       <div class="narrow">
         <div class="eyebrow">Services</div>
         <h2>Two ways to work together.</h2>
@@ -829,7 +905,7 @@
       </div>
     </section>
 
-    <section class="section faq" id="faq">
+    <section class="section faq faq-section" id="faq">
       <div class="faq-wrap">
         <div>
           <div class="eyebrow">Questions</div>
