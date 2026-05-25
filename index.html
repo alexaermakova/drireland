@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,7 +9,9 @@
       --ink: #26302f;
       --muted: #65706d;
       --soft: #f6f2eb;
-      --soft-2: #efe7dc;
+      --soft-2: #ece3d6;
+      --warm: #c48d6f;
+      --teal: #6f8f8a;
       --card: #ffffff;
       --accent: #48685f;
       --accent-dark: #324c45;
@@ -25,7 +27,7 @@
       margin: 0;
       font-family: Georgia, 'Times New Roman', serif;
       color: var(--ink);
-      background: var(--soft);
+      background: linear-gradient(180deg, #f7f3ec 0%, #f4efe7 100%);
       line-height: 1.6;
     }
 
@@ -213,6 +215,7 @@
     }
 
     .intro {
+      background: linear-gradient(180deg, #fffaf3 0%, #f9f3ea 100%);
       background: #fffaf3;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
@@ -231,11 +234,18 @@
     }
 
     .card {
+      position: relative;
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 22px;
       padding: 26px;
-      box-shadow: 0 10px 34px rgba(38, 48, 47, .06);
+      box-shadow: 0 12px 36px rgba(38, 48, 47, .07);
+      transition: transform .2s ease;
+    }
+
+    .card:hover,
+    .service-card:hover {
+      transform: translateY(-3px);
     }
 
     .card p,
@@ -254,6 +264,7 @@
     }
 
     .service-card {
+      background: linear-gradient(180deg, #fffaf7 0%, #fffdf9 100%);
       background: #fffaf3;
       border: 1px solid var(--line);
       border-radius: 28px;
@@ -262,6 +273,7 @@
     }
 
     .service-card.featured {
+      background: linear-gradient(180deg, #f8fbfa 0%, #f3f8f6 100%);
       border: 2px solid var(--accent);
       box-shadow: 0 18px 54px rgba(38, 48, 47, .12);
     }
@@ -300,6 +312,7 @@
     }
 
     .prepare {
+      background: linear-gradient(135deg, #35584f 0%, #42675d 100%);
       background: var(--accent-dark);
       color: white;
     }
@@ -334,6 +347,7 @@
     }
 
     .faq-wrap {
+      position: relative;
       display: grid;
       grid-template-columns: .8fr 1.2fr;
       gap: 44px;
@@ -341,6 +355,7 @@
     }
 
     details {
+      background: linear-gradient(180deg, #fffaf5 0%, #fffefc 100%);
       background: #fffaf3;
       border: 1px solid var(--line);
       border-radius: 18px;
@@ -365,6 +380,7 @@
     }
 
     .about-preview {
+      background: linear-gradient(180deg, #f8f3eb 0%, #f5efe7 100%);
       background: #fffaf3;
       border-top: 1px solid var(--line);
     }
@@ -388,6 +404,7 @@
     }
 
     footer {
+      background: linear-gradient(180deg, #24312f 0%, #1f2b29 100%);
       background: var(--ink);
       color: white;
       padding: 46px 24px;
@@ -465,15 +482,18 @@
 
       <div>
         <div class="eyebrow">Personalized care for perimenopause and menopause</div>
-        <h1>You are not imagining it. There is a medical explanation.</h1>
-        <p class="lead">Dr. Julia Ireland helps women understand changes in weight, energy, sleep, mood, and hormones through structured, individualized medical care.</p>
+        <h1>Your body is changing. You deserve support.</h1>
+        <p class="lead">Calm, individualized care for women navigating perimenopause, menopause, hormone changes, weight shifts, fatigue, sleep disruption, and feeling unlike themselves.</p>
+
+        <div style="font-family:Arial,sans-serif;color:#7a746d;font-size:.95rem;margin:20px 0 18px;max-width:540px;line-height:1.7;">You do not need to have everything figured out before asking for help.</div>
 
         <ul class="hero-list">
-          <li>Unexplained weight gain</li>
-          <li>Fatigue or poor sleep</li>
-          <li>Brain fog or mood changes</li>
-          <li>Feeling dismissed or unheard</li>
-        </ul>
+          <li>Weight changes that suddenly feel out of control</li>
+          <li>Brain fog or difficulty focusing</li>
+          <li>Poor sleep or waking exhausted</li>
+          <li>Anxiety, irritability, or emotional overwhelm</li>
+          <li>Hot flashes or hormone symptoms</li>
+          <li>Feeling dismissed, unheard, or “fine on p
 
         <div class="cta-row">
           <a href="#services" class="button">See Ways to Work Together</a>
@@ -485,6 +505,7 @@
     <section class="intro">
       <div class="section narrow">
         <h2>You are not failing. Your body is changing.</h2>
+        <p>Many women spend years thinking they are exhausted, overwhelmed, anxious, or simply getting older before realizing hormones may be part of the picture.</p>
         <p>Perimenopause can begin years before menopause itself, sometimes in the late 30s or 40s. Hormonal shifts can affect metabolism, sleep, stress response, mood, cognition, and weight regulation long before periods fully stop.</p>
         <p>Many women are told their symptoms are normal, stress related, or simply part of aging. Others receive fragmented care that treats symptoms one by one without looking at the larger pattern.</p>
         <p>Dr. Ireland’s practice focuses on understanding that pattern, reviewing labs carefully, and creating a plan that supports both current quality of life and long term health.</p>
