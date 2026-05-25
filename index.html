@@ -158,21 +158,31 @@
     }
 
     .hero-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 22px;
-      margin: 28px 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 24px 0 30px;
       padding: 0;
       list-style: none;
       font-family: Arial, sans-serif;
       color: var(--ink);
+      max-width: 560px;
+    }
+
+    .hero-list li {
+      position: relative;
+      padding-left: 28px;
+      line-height: 1.45;
+      font-size: 1rem;
     }
 
     .hero-list li::before {
       content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
       color: var(--accent);
       font-weight: 800;
-      margin-right: 8px;
     }
 
     .cta-row {
@@ -438,9 +448,6 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .hero-list {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (max-width: 560px) {
@@ -493,7 +500,8 @@
           <li>Poor sleep or waking exhausted</li>
           <li>Anxiety, irritability, or emotional overwhelm</li>
           <li>Hot flashes or hormone symptoms</li>
-          <li>Feeling dismissed, unheard, or “fine on p
+          <li>Feeling dismissed, unheard, or “fine on paper”</li>
+        </ul>
 
         <div class="cta-row">
           <a href="#services" class="button">See Ways to Work Together</a>
